@@ -1,0 +1,33 @@
+CROSS_COMPILE=1
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ppc-amigaos
+
+ac_add_options --target=ppc-amigaos
+ac_add_options --without-system-nspr
+ac_add_options --without-system-zlib
+ac_add_options --without-system-jpeg
+ac_add_options --without-system-png
+ac_add_options --without-system-mng
+ac_add_options --enable-default-toolkit=cairo-amigaos
+ac_add_options --without-x
+ac_add_options --enable-system-cairo
+ac_add_options --disable-pango
+ac_add_options --disable-printing
+ac_add_options --disable-tests
+ac_add_options --with-branding=browser/branding/timberwolf
+ac_add_options --disable-necko-wifi
+
+# Debug/Build options
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+
+## Remove this later
+ac_add_options --disable-pref-extensions
+
+#ac_add_options --enable-application=xulrunner
+#mk_add_options MOZ_CO_PROJECT=xulrunner
+
+ac_add_options --enable-application=browser
+mk_add_options MOZ_CO_PROJECT=browser
+
+

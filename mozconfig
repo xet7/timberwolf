@@ -1,0 +1,48 @@
+CROSS_COMPILE=1
+
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ppc-amigaos
+mk_add_options MOZ_MAKE_FLAGS="-j4"
+
+ac_add_options --target=ppc-amigaos
+ac_add_options --without-system-nspr
+ac_add_options --without-system-zlib
+ac_add_options --without-system-jpeg
+ac_add_options --without-system-png
+ac_add_options --without-system-mng
+#ac_add_options --enable-system-sqlite
+ac_add_options --enable-default-toolkit=cairo-amigaos
+ac_add_options --without-x
+ac_add_options --without-pthreads
+ac_add_options --enable-system-cairo
+ac_add_options --disable-pango
+ac_add_options --disable-printing
+ac_add_options --disable-tests
+#ac_add_options --enable-tests
+ac_add_options --with-branding=browser/branding/timberwolf
+ac_add_options --disable-necko-wifi
+ac_add_options --disable-ipc
+#ac_add_options --enable-libxul --disable-static
+ac_add_options --disable-static --disable-libxul
+ac_add_options --enable-chrome-format=jar
+ac_add_options --enable-shared-js
+ac_add_options --disable-jsg
+ac_add_options --disable-tracejit
+ac_add_options --disable-methodjit
+ac_add_options --enable-cpp-rtti
+ac_add_options --enable-splashscreen
+
+# Debug/Build options
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+ac_add_options --enable-logging
+
+## Remove this later
+ac_add_options --disable-pref-extensions
+
+#ac_add_options --enable-application=xulrunner
+#mk_add_options MOZ_CO_PROJECT=xulrunner
+
+ac_add_options --enable-application=browser
+mk_add_options MOZ_CO_PROJECT=browser
+
+
